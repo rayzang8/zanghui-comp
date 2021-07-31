@@ -13,14 +13,14 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "commonjs", // "esnext",
+    "module": "esnext", // "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    // "noEmit": true,
     "jsx": "react-jsx",
-//    "declaration": true,
-//    "outDir": "./build"
+    "declaration": true,
+    "outDir": "./es"
   },
   "exclude": [
     "node_modules",
