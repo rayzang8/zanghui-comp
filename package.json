@@ -1,6 +1,6 @@
 {
   "name": "zanghui-comp-button",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "main": "build/static/js/main.js",
   "types": "build/static/js/main.d.ts",
   "license": "ISC",
@@ -16,9 +16,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "dependencies": {
+    "react-dom": "^17.0.2",
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
