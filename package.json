@@ -1,6 +1,6 @@
 {
   "name": "zanghui-comp-button",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "main": "build/static/js/main.js",
   "types": "es/main.d.ts",
   "license": "ISC",
