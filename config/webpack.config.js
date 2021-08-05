@@ -193,21 +193,21 @@ module.exports = function (webpackEnv) {
                     // initialization, it doesn't blow up the WebpackDevServer client, and
                     // changing JS code would still trigger a refresh.
                 ]
-                : paths.mainIndexJs,
-        externals: {
-            react: {
-                root: 'React',
-                commonjs2: 'react',
-                commonjs: 'react',
-                amd: 'react'
-            },
-            'react-dom': {
-                root: 'ReactDOM',
-                commonjs2: 'react-dom',
-                commonjs: 'react-dom',
-                amd: 'react-dom'
-            }
-        },
+                : paths.appIndexJs,
+        // externals: {
+        //     react: {
+        //         root: 'React',
+        //         commonjs2: 'react',
+        //         commonjs: 'react',
+        //         amd: 'react'
+        //     },
+        //     'react-dom': {
+        //         root: 'ReactDOM',
+        //         commonjs2: 'react-dom',
+        //         commonjs: 'react-dom',
+        //         amd: 'react-dom'
+        //     }
+        // },
         output: {
             // The build folder.
             path: isEnvProduction ? paths.appBuild : undefined,
@@ -243,8 +243,8 @@ module.exports = function (webpackEnv) {
             // module chunks which are built will work in web workers as well.
             globalObject: 'this',
             // 打包成库
-            library: 'zanghui-comp-button',
-            libraryTarget: 'umd',
+            // library: 'zanghui-comp-button',
+            // libraryTarget: 'umd',
         },
         optimization: {
             minimize: false,
@@ -732,6 +732,7 @@ module.exports = function (webpackEnv) {
             !disableESLintPlugin &&
             new ESLintPlugin({
                 // Plugin options
+                exclude:['build_bak'],
                 extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),

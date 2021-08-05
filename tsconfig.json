@@ -7,6 +7,7 @@
       "esnext"
     ],
     "allowJs": true,
+    "checkJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -22,11 +23,13 @@
     "declaration": true,
     "outDir": "./es"
   },
+  "include": [
+    "src",
+  ],
   "exclude": [
     "node_modules",
-    "build"
-  ],
-  "include": [
-    "src"
+    "build",
+    "src/build_bak",
+    // "./src/App.tsx",
   ]
 }

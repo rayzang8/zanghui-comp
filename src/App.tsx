@@ -1,25 +1,17 @@
 import React from 'react';
 import Button from './components/button';
-// import logo from './logo.svg';
-// import './App.css';
+import './build_bak/main.window';
+import * as varModule from './build_bak/main.var';
+import * as umdModule from './build_bak/main.umd';
 
 function App() {
   return (
     <div className="App">
-      {/*<header className="App-header">*/}
-        {/*<img src={logo} className="App-logo" alt="logo" />*/}
-        {/*<p>*/}
-          {/*Edit <code>src/App.tsx</code> and save to reload.*/}
-        {/*</p>*/}
-        {/*<a*/}
-          {/*className="App-link"*/}
-          {/*href="https://reactjs.org"*/}
-          {/*target="_blank"*/}
-          {/*rel="noopener noreferrer"*/}
-        {/*>*/}
-          {/*Learn React*/}
-        {/*</a>*/}
-      {/*</header>*/}
+      <header className="App-header">
+        <p>{(window as any).zanghui}</p>
+        <p>{(varModule as any).zanghui || 'undefined'}</p>
+        <p>{(umdModule as any).zanghui || 'undefined'}</p>
+      </header>
       <Button>antd Button</Button>
     </div>
   );
