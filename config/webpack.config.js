@@ -105,7 +105,7 @@ module.exports = function (webpackEnv) {
                 // css is located in `static/css`, use '../../' to locate index.html folder
                 // in production `paths.publicUrlOrPath` can be a relative path
                 options: paths.publicUrlOrPath.startsWith('.')
-                    ? {publicPath: '../../'}
+                    ? { publicPath: '../../' }
                     : {},
             },
             {
@@ -193,7 +193,7 @@ module.exports = function (webpackEnv) {
                     // initialization, it doesn't blow up the WebpackDevServer client, and
                     // changing JS code would still trigger a refresh.
                 ]
-                : paths.appIndexJs,
+                : paths.mainIndexJs,
         // externals: {
         //     react: {
         //         root: 'React',
@@ -216,7 +216,7 @@ module.exports = function (webpackEnv) {
             // There will be one main bundle, and one file per asynchronous chunk.
             // In development, it does not produce real files.
             filename: isEnvProduction
-                ? 'static/js/[name].js'
+                ? 'static/js/main.js'
                 : isEnvDevelopment && 'static/js/bundle.js',
             // TODO: remove this when upgrading to webpack 5
             futureEmitAssets: true,
@@ -243,8 +243,8 @@ module.exports = function (webpackEnv) {
             // module chunks which are built will work in web workers as well.
             globalObject: 'this',
             // 打包成库
-            // library: 'zanghui-comp-button',
-            // libraryTarget: 'umd',
+            library: 'zanghui-comp-button',
+            libraryTarget: 'umd',
         },
         optimization: {
             minimize: false,
@@ -306,7 +306,7 @@ module.exports = function (webpackEnv) {
                             : false,
                     },
                     cssProcessorPluginOptions: {
-                        preset: ['default', {minifyFontValues: {removeQuotes: false}}],
+                        preset: ['default', { minifyFontValues: { removeQuotes: false } }],
                     },
                 }),
             ],
@@ -378,7 +378,7 @@ module.exports = function (webpackEnv) {
             strictExportPresence: true,
             rules: [
                 // Disable require.ensure as it's not a standard language feature.
-                {parser: {requireEnsure: false}},
+                { parser: { requireEnsure: false } },
                 {
                     // "oneOf" will traverse all following loaders until one will
                     // match the requirements. When no loader matches it will fall
@@ -463,7 +463,7 @@ module.exports = function (webpackEnv) {
                                 presets: [
                                     [
                                         require.resolve('babel-preset-react-app/dependencies'),
-                                        {helpers: true},
+                                        { helpers: true },
                                     ],
                                 ],
                                 cacheDirectory: true,
@@ -732,7 +732,7 @@ module.exports = function (webpackEnv) {
             !disableESLintPlugin &&
             new ESLintPlugin({
                 // Plugin options
-                exclude:['build_bak'],
+                exclude: ['build_bak'],
                 extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint'),
