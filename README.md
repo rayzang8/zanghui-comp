@@ -33,6 +33,7 @@ tsconfig.json 文件配置
 output 中的 filename 输出名中不需要插入类似[contenthash:8]的字符
 output 中的chunkFilename 也不需要（暂时不考虑分块）
 output 还需要增加 library （库名，和package.json的name一致）和 libraryTarget（模块类型，一般umd够用），缺少它们时，使用App会无法引入库中的组件
+import_test分支中src/build_bak 目录下存放的就是libraryTarget取不同值后打出的bundle, App.tsx用以测试不同模块系统打出的包如何被引入
 
 
 
@@ -70,3 +71,6 @@ externals: {
 那么d.ts 文件要如何生成,类似的打出像antd里的 lib, es 目录下.js 和 d.ts在一起文件结构，要如何做。
 
 
+### 3. 用webpack 如何编出ES Module的包
+目前只能依靠一个插件 esm-webpack-plugin， 地址：https://github.com/purtuga/esm-webpack-plugin
+但是作者也不能保证用它打出的esm的包能否被别的App引入后，再用webpack来做 treeshake

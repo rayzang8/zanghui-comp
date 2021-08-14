@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Button from './components/button';
+import Card from './components/card';
 import './build_bak/main.window';                         // 挂载到window上的模块
 import * as varModule from './build_bak/main.var';        // 挂载默认导出的模块(var 没有暴露出任何模块，相当于自执行函数)
 import * as umdModule from './build_bak/main.umd';        // 挂载umd模块
@@ -29,6 +30,7 @@ function App() {
         <p>5.{amdModule?.zanghui || 'undefined'}</p>
       </header>
       <Button>antd Button</Button>
+      <Card />
     </div>
   );
 }
