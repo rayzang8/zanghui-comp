@@ -1,1 +1,1 @@
-export const zanghui = 'ZangHui';
+export const zanghui = 'ZangHui test bundle a lib';
