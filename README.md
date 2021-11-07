@@ -89,5 +89,5 @@ externals: {
 
 但是作者也不能保证用它打出的esm的包能否被别的App引入后，再用webpack来做 treeshake
 
-### 4. 本项目的import_test branch 实验了引入不同模块系统打出的库
+### 4. 本项目的import_test branch 实验了引入不同模块系统打出的库(output.libraryTarget 取不同的值)
 
